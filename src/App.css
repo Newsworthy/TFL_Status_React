@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  padding: 0 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.lineName {
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+#bakerloo {
+  color: #FFFFFF;
+  background-color: rgb(178, 99, 0);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#central {
+  color: #FFFFFF;
+  background-color: rgb(220, 36, 31);
+}
+
+#circle {
+  color: #113892;
+  background-color: rgb(255, 211, 41);
+}
+
+#district {
+  color: #FFFFFF;
+  background-color: rgb(0, 125, 50);
+}
+
+#dlr {
+  color: #FFFFFF;
+  background-color: rgb(0, 175, 173);
+}
+
+#hammersmith-city {
+  color: #113892;
+  background-color: rgb(244, 169, 190);
+}
+
+#jubilee {
+  color: #FFFFFF;
+  background-color: rgb(161, 165, 167);
+}
+
+#london-overground {
+  color: #FFFFFF;
+  background-color: rgb(239, 123, 16);
+}
+
+#metropolitan {
+  color: #FFFFFF;
+  background-color: rgb(155, 0, 88);
+}
+
+#northern {
+  color: #FFFFFF;
+  background-color: rgb(0, 0, 0);
+}
+
+#piccadilly {
+  color: #FFFFFF;
+  background-color: rgb(0, 25, 168)
+}
+
+#tfl-rail {
+  color: #FFFFFF;
+  background-color: rgb(0, 25, 168);
+}
+
+#tram {
+  color: #FFFFFF;
+  background-color: rgb(0, 189, 25);
+}
+
+#victoria {
+  color: #FFFFFF;
+  background-color: rgb(0, 152, 216);
+}
+
+#waterloo-city {
+  color: #113892;
+  background-color: rgb(147, 206, 186);
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 1000ms ease-out;
+}
+
+.line {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+button {
+  vertical-align: middle;
+}
+
+.btn-link {
+  color: white !important;
 }
