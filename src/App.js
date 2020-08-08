@@ -7,8 +7,9 @@ import Footer from './components/layout/Footer';
 import {
   Container
 } from 'reactstrap';
-
 import './App.css';
+
+
 
 class App extends Component {
   state = {
@@ -17,7 +18,11 @@ class App extends Component {
   }
 
   axiosFunc = () => {
-    axios.get('https://api.tfl.gov.uk/Line/Mode/tube,overground,dlr,tflrail,tram/Status?detail=False&app_id=ee65a450&app_key=3db5817b87411911cbde2fcf1fd5516e')
+    console.log(process.env);
+    const APP_ID = process.env.APP_ID;
+    const APP_KEY = process.env.APP_KEY;
+    // console.log('Here is what I got: ' + id + ' ' + key)
+    axios.get('https://cors-anywhere.herokuapp.com/https://api.tfl.gov.uk/Line/Mode/tube,overground,dlr,tflrail,tram/Status?detail=False&app_id=' + APP_ID + '&app_key=' + APP_KEY)
       .then(res => this.setState({ tflData: res.data, lastUpdate: new Date() }));
     console.log("Axios updated the data.")
   }
