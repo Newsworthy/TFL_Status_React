@@ -2,16 +2,10 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
 import Lines from './components/Lines';
-import TransportLine from './components/TransportLine';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import {
-  Button,
-  Container,
-  Col,
-  Row,
-  ListGroup,
-  ListGroupItem
+  Container
 } from 'reactstrap';
 
 import './App.css';

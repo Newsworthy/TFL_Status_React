@@ -6,13 +6,7 @@ import {
     ModalBody,
     Row,
     Col,
-    Form,
-    FormGroup,
-    Label,
-    Input,
 } from "reactstrap";
-import PropTypes from "prop-types";
-import TransportLine from './TransportLine'
 
 class LineModal extends Component {
     state = {
@@ -44,7 +38,7 @@ class LineModal extends Component {
  
 
     render() {
-        const { id, name, modeName, modified, created, lineStatuses } = this.props.line;
+        const { id, name, modified, lineStatuses } = this.props.line;
 
         const m = (() => {
             let modifiedDate = new Date(modified);
@@ -59,7 +53,7 @@ class LineModal extends Component {
 
         const warningLevel = (() => {
             let lineCurrentStatus = this.props.line.lineStatuses[0].statusSeverityDescription;
-            if (lineCurrentStatus == "Suspended") {
+            if (lineCurrentStatus === "Suspended") {
                 return extremeAlert;
             } else if (lineCurrentStatus === "Part Suspended") {
                 return majorAlert;
@@ -87,8 +81,9 @@ class LineModal extends Component {
         return (
             <div>
                 {lineStatuses.map(status => (
-                    <React.Fragment>
+                    <React.Fragment key={this.props.line.id}>
                         <Button
+                            id={this.props.line.id + "_button"}
                             onClick={this.toggle}
                             className={"btn-" + warningLevel + " btn-lg btn-block"}
                         >
