@@ -123,3 +123,7 @@ button {
 .btn-link {
   color: white !important;
 }
+
+.modal-title {
+  min-width: 90%;
+}

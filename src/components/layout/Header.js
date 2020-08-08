@@ -1,14 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';;
+import React, { Component } from 'react'
 
-function Header() {
-    return (
-        <div>
-            <header style={headerStyle}>
+class Header extends Component {
+    render() {
+        return (
+            <div>
+                <header style={headerStyle}>
                 <h1>Transport for London - Status Updates</h1>
+                <h6>Last data update: {this.props.lastUpdate.toString()}</h6>
             </header>
-        </div>
-    )
+            </div>
+        )
+    }
 }
 
 const headerStyle = {
@@ -16,11 +18,6 @@ const headerStyle = {
     color: '#fff',
     textAlign: 'center',
     padding: '10px'
-}
-
-const linkStyle = {
-    color: '#fff',
-    textDecoration: 'none'
 }
 
 export default Header
