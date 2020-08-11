@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
 import Lines from './components/Lines';
 import Header from './components/layout/Header';
@@ -9,7 +8,7 @@ import {
 } from 'reactstrap';
 import './App.css';
 
-
+// console.log(`${process.env.REACT_APP_APP_ID}`);
 
 class App extends Component {
   state = {
@@ -18,11 +17,12 @@ class App extends Component {
   }
 
   axiosFunc = () => {
-    console.log(process.env);
-    const APP_ID = process.env.APP_ID;
-    const APP_KEY = process.env.APP_KEY;
+    // console.log(process.env);
+    // console.log(process.env.PORT);
+    // const APP_ID = `${process.env.REACT_APP_APP_ID}`;
+    // const APP_KEY = `${process.env.REACT_APP_APP_KEY}`;
     // console.log('Here is what I got: ' + id + ' ' + key)
-    axios.get('https://cors-anywhere.herokuapp.com/https://api.tfl.gov.uk/Line/Mode/tube,overground,dlr,tflrail,tram/Status?detail=False&app_id=' + APP_ID + '&app_key=' + APP_KEY)
+    axios.get('https://api.tfl.gov.uk/Line/Mode/tube,overground,dlr,tflrail,tram/Status?detail=False&app_id=ee65a450&app_key=3db5817b87411911cbde2fcf1fd5516e')
       .then(res => this.setState({ tflData: res.data, lastUpdate: new Date() }));
     console.log("Axios updated the data.")
   }
@@ -34,17 +34,14 @@ class App extends Component {
   render() {
     // console.log(this.state.tflData);
     return (
-      <Router>
-        <Route path="/" render={props => (
-          <div className="App">
-            <Container>
-              <Header lastUpdate={this.state.lastUpdate} />
-              <Lines tflData={this.state.tflData} />
-              <Footer />
-            </Container>
-          </div>
-        )} />
-      </Router>
+      <div className="App">
+        <Container>
+          <Header lastUpdate={this.state.lastUpdate} />
+          <Lines tflData={this.state.tflData} />
+          <Footer />
+        </Container>
+      </div>
+
     )
   }
 
