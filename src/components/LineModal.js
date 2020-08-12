@@ -7,6 +7,7 @@ import {
     Row,
     Col,
 } from "reactstrap";
+import moment from 'moment';
 
 class LineModal extends Component {
     state = {
@@ -20,7 +21,7 @@ class LineModal extends Component {
     };
 
     shortReason = () => {
-        let updatedStatus = this.props.line.lineStatuses.map(({reason, statusSeverityDescription, statusSeverity}, i) => {
+        let updatedStatus = this.props.line.lineStatuses.map(({ reason, statusSeverityDescription, statusSeverity, validityPeriods }, i) => {
             if (this.props.line.lineStatuses[i].reason === undefined) {
                 let reasonShort = `A Good Service has been reported on the ${this.props.line.name} line`;
                 return reasonShort
@@ -41,8 +42,8 @@ class LineModal extends Component {
         const minorAlert = "warning";
         const goodService = "success";
         const bugFound = "info";
-        let lineStatusSeverity = this.props.line.lineStatuses.map(({reason, lineId, statusSeverityDescription, statusSeverity}, i) => {
-            console.log(lineId, statusSeverity, statusSeverityDescription, reason)
+        let lineStatusSeverity = this.props.line.lineStatuses.map(({ reason, lineId, statusSeverityDescription, statusSeverity, validityPeriods }, i) => {
+            console.log(lineId, statusSeverity, statusSeverityDescription, reason, validityPeriods);
             if (this.props.line.lineStatuses[i].statusSeverityDescription === "Suspended") {
                 return extremeAlert;
             } else if (this.props.line.lineStatuses[i].statusSeverityDescription === "Part Suspended") {
@@ -66,21 +67,36 @@ class LineModal extends Component {
             } else {
                 return bugFound;
             }
-        });  
+        });
         console.log("lineStatusSeverity is " + lineStatusSeverity)
         return lineStatusSeverity
-    }; 
+    };
 
+    statusChanged = () => {
+        const data = this.props.line.lineStatuses.map(({ validityPeriods, lineId }, i) => {
+            console.log("this.validityPeriods is: " + JSON.stringify(this.props.line.lineStatuses[i].validityPeriods));
+            const periods = this.props.line.lineStatuses[i].validityPeriods.map(({ fromDate, toDate, isNow }, j) => {
+                console.log("Validity periods are: " + fromDate, toDate);
+                return fromDate;
+            })
+            console.log(this.props.line.id + " Periods are: " + periods);
+            const m = (() => {
+                console.log("Here is the original time: " + periods)
+                const timeFixed = moment(periods).format("dddd, MMMM Do YYYY, h:mm:ss a");
+                console.log("Here is the fixed time: " + timeFixed)
+                return timeFixed;
+            })();
+            console.log("m is: " + m);
+            return m;
 
- 
+        });
+        return data;
+    };
 
     render() {
         const { id, name, modified, lineStatuses } = this.props.line;
+        // const { statusChanged } = this.props.line.lineStatuses[i].validityPeriods[i].fromDate;
 
-        const m = (() => {
-            let modifiedDate = new Date(modified);
-            return modifiedDate.toString();
-        })();
 
         return (
             <div>
@@ -101,8 +117,8 @@ class LineModal extends Component {
                                     <Col xs="6">
                                         {name}
                                     </Col>
-                                    <Col xs="6" 
-                                    className={"bg-" + this.warningLevel(lineStatuses) + " text-center align-middle my-auto"} >
+                                    <Col xs="6"
+                                        className={"bg-" + this.warningLevel(lineStatuses) + " text-center align-middle my-auto"} >
                                         {status.statusSeverityDescription}
                                     </Col>
                                 </Row>
@@ -112,7 +128,7 @@ class LineModal extends Component {
                                 <hr />
                                 <Row>
                                     <Col xs="12">
-                                        <small>Last modified: <br />{m}</small>
+                                        <small>Last modified: <br />{this.statusChanged(lineStatuses)}</small>
                                     </Col>
                                 </Row>
                             </ModalBody>
