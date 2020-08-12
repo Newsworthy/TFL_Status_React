@@ -14,6 +14,8 @@ class LineModal extends Component {
         modal: false,
     }
 
+
+
     toggle = () => {
         this.setState({
             modal: !this.state.modal,
@@ -44,27 +46,28 @@ class LineModal extends Component {
         const minorAlert = "warning";
         const goodService = "success";
         const bugFound = "info";
-        let lineStatusSeverity = this.props.line.lineStatuses.map(({ reason, lineId, statusSeverityDescription, statusSeverity, validityPeriods }, i) => {
+        const location = this.props.line.lineStatuses;
+        let lineStatusSeverity = location.map(({ reason, lineId, statusSeverityDescription, statusSeverity, validityPeriods }, i) => {
             // console.log(lineId, statusSeverity, statusSeverityDescription, reason, validityPeriods);
-            if (this.props.line.lineStatuses[i].statusSeverityDescription === "Suspended") {
+            if (location[i].statusSeverityDescription === "Suspended") {
                 return extremeAlert;
-            } else if (this.props.line.lineStatuses[i].statusSeverityDescription === "Part Suspended") {
+            } else if (location[i].statusSeverityDescription === "Part Suspended") {
                 return majorAlert;
-            } else if (this.props.line.lineStatuses[i].statusSeverityDescription === "Planned Closure") {
+            } else if (location[i].statusSeverityDescription === "Planned Closure") {
                 return majorAlert;
-            } else if (this.props.line.lineStatuses[i].statusSeverityDescription === "Part Closure") {
+            } else if (location[i].statusSeverityDescription === "Part Closure") {
                 return minorAlert;
-            } else if (this.props.line.lineStatuses[i].statusSeverityDescription === "Severe Delays") {
+            } else if (location[i].statusSeverityDescription === "Severe Delays") {
                 return majorAlert;
-            } else if (this.props.line.lineStatuses[i].statusSeverityDescription === "Reduced Service") {
+            } else if (location[i].statusSeverityDescription === "Reduced Service") {
                 return minorAlert;
-            } else if (this.props.line.lineStatuses[i].statusSeverityDescription === "Minor Delays") {
+            } else if (location[i].statusSeverityDescription === "Minor Delays") {
                 return minorAlert;
-            } else if (this.props.line.lineStatuses[i].statusSeverityDescription === "Special Service") {
+            } else if (location[i].statusSeverityDescription === "Special Service") {
                 return minorAlert;
-            } else if (this.props.line.lineStatuses[i].statusSeverityDescription === "Good Service") {
+            } else if (location[i].statusSeverityDescription === "Good Service") {
                 return goodService;
-            } else if (this.props.line.lineStatuses[i].statusSeverityDescription === "Service Closed") {
+            } else if (location[i].statusSeverityDescription === "Service Closed") {
                 return extremeAlert;
             } else {
                 return bugFound;
@@ -75,34 +78,61 @@ class LineModal extends Component {
     };
 
     statusChanged = () => {
-        const data = this.props.line.lineStatuses.map(({ validityPeriods, lineId }, i) => {
+
+        const calendarSettings = {
+            sameDay: '[Today at] LT',
+            nextDay: '[Tomorrow at] LT',
+            nextWeek: 'dddd',
+            lastDay: '[Yesterday]',
+            lastWeek: '[Last] dddd',
+            sameElse: 'DD/MM/YYYY [at] LT'
+        };
+        const [data] = this.props.line.lineStatuses.map(({ validityPeriods, lineId }, i) => {
             // console.log("this.validityPeriods is: " + JSON.stringify(this.props.line.lineStatuses[i].validityPeriods));
             const periods = this.props.line.lineStatuses[i].validityPeriods.map(({ fromDate, toDate, isNow }, j) => {
                 // console.log("Validity periods are: " + fromDate, toDate);
-                return fromDate;
+                return { from: fromDate, end: toDate, active: isNow };
             });
-            // console.log(this.props.line.id + " Periods are: " + periods);
             const m = (() => {
-                // console.log("Here is the original time: " + periods)
-                const timeString = new Date(periods);
-                const timeFixed = moment.utc(timeString).format("dddd, MMMM Do YYYY, hh:mm:ss ");
-                // console.log("Here is the fixed time: " + timeFixed)
-                return timeFixed;
+                if (periods.length === 0) {
+                    let startTime = moment().calendar(null, calendarSettings);
+                    return [startTime];
+                } else {
+                    let startTime = moment.utc(periods[0].from).calendar(null, calendarSettings);
+                    let endTime = moment.utc(periods[0].end).calendar(null, calendarSettings);
+                    // console.log("startTime = " + startTime, "endTime = " + endTime);
+                    return [startTime, endTime]
+                };
             })();
-            // console.log("m is: " + m);
-            if (m === "Invalid date") {
-                const updateTime = moment().format("dddd, MMMM Do YYYY, hh:mm:ss ");
-                return updateTime.toString();
-            } else {
-                return m;
-            }
-
+            let m0 = m[0];
+            let m1 = m[1];
+            // console.log("m0 is " + m0 + " and m1 is " + m1)
+            return [[m0], [m1]];
         });
-        return data;
+        // console.log("Data is " + data);
+        // console.log("Data 0 is: " + data[0]);
+        // console.log("Data 1 is: " + data[1]);
+        return (<React.Fragment>
+            <Col xs="6">
+                <small>Last updated: <br />{data[0]}</small>
+            </Col>
+            <Col xs="6">
+            {/* {(() => {
+                let length = data[1].length;
+                console.log("Length is: " + length);
+                switch (length) {
+                    case 0 : return (<small>Estimated finish: <br />{data[1]}</small>);
+                    case 1 : break;
+                }                
+            }
+            )} */}
+            </Col>
+        </React.Fragment>
+        );
     };
 
     render() {
-        const { id, name, modified, lineStatuses } = this.props.line;
+        const { id, name, lineStatuses } = this.props.line;
         // const { statusChanged } = this.props.line.lineStatuses[i].validityPeriods[i].fromDate;
 
 
@@ -135,9 +165,7 @@ class LineModal extends Component {
                                 <h6>{this.shortReason(lineStatuses)}</h6>
                                 <hr />
                                 <Row>
-                                    <Col xs="12">
-                                        <small>Last updated: <br />{this.statusChanged(lineStatuses)}</small>
-                                    </Col>
+                                    {this.statusChanged()}
                                 </Row>
                             </ModalBody>
                         </Modal>
