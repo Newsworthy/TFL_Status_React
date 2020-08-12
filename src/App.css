@@ -97,28 +97,11 @@ body {
   background-color: rgb(147, 206, 186);
 }
 
-.fade-enter {
-  opacity: 0.01;
-}
-
-.fade-enter-active {
-  opacity: 1;
-  transition: opacity 1000ms ease-in;
-}
-
-.fade-exit {
-  opacity: 1;
-}
-
-.fade-exit-active {
-  opacity: 0.01;
-  transition: opacity 1000ms ease-out;
-}
-
 .line {
   position: relative;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%);  
+
 }
 
 button {
@@ -131,4 +114,8 @@ button {
 
 .modal-title {
   min-width: 90%;
+}
+
+.transportLine {
+  border: 1px black solid;
 }

@@ -3,9 +3,7 @@ import axios from 'axios';
 import Lines from './components/Lines';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import {
-  Container
-} from 'reactstrap';
+import { Container } from 'reactstrap';
 import './App.css';
 
 // console.log(`${process.env.REACT_APP_APP_ID}`);
