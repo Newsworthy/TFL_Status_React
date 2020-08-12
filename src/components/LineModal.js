@@ -141,12 +141,11 @@ class LineModal extends Component {
                 {lineStatuses.map((status, i) => (
                     <React.Fragment key={this.props.line.id + i}>
                         <Button
-                            id={this.props.line.id + "_button" + i}
+                            id={this.props.line.id + "_button-" + i}
                             onClick={this.toggle}
-                            className={"btn-" + this.warningLevel(lineStatuses) + " btn-lg btn-block"}
+                            className={"btn-" + this.warningLevel() + " btn-lg btn-block"}
                         >
-                            <h4>
-                                {status.statusSeverityDescription}</h4>
+                            <h4>{status.statusSeverityDescription}</h4>
                         </Button>
 
                         <Modal isOpen={this.state.modal} toggle={this.toggle}>
@@ -156,13 +155,13 @@ class LineModal extends Component {
                                         {name}
                                     </Col>
                                     <Col xs="6"
-                                        className={"bg-" + this.warningLevel(lineStatuses) + " text-center align-middle my-auto"} >
+                                        className={"bg-" + this.warningLevel() + " text-center align-middle my-auto"} >
                                         {status.statusSeverityDescription}
                                     </Col>
                                 </Row>
                             </ModalHeader>
                             <ModalBody>
-                                <h6>{this.shortReason(lineStatuses)}</h6>
+                                <h6>{this.shortReason()}</h6>
                                 <hr />
                                 <Row>
                                     {this.statusChanged()}
