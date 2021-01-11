@@ -3,7 +3,7 @@
 
 Currently running here: https://development.newsworthyvision.com/tfllivestatus/
 
-As part of my learning of API hunting, and building web apps in React, I present to the world my React App for Londoners, who want to know if their underground train is running.
+As part of my learning of API addiction and building web apps in React, I present to the world my React App for Londoners, who want to know if their underground train is running smoothly.
 
 ### Now at version 0.5.0, safe and secure
 
@@ -16,4 +16,4 @@ I'd like to add the following:
 - A notification when there is a change in status of a line, either audio, or a popup, or both.
 - I think I am still not meeting TFL standards when there is more than two alerts on one line. Sadly, it's not easy to test until that happens live.
 
-If you find any bugs in this software, or would like to see more features displayed, please email me at development@newsworthyvision.com
+If you find any bugs or would like to see more features displayed, please email me at development@newsworthyvision.com
