@@ -17,11 +17,11 @@ export class TransportLine extends Component {
         const { id, name } = this.props.line;
         return (
             <Container fluid>
-                <Row className="alignMiddle transportLine" id={id}>
-                    <Col xs="6">
+                <Row xs="1" sm="2" className="alignMiddle transportLine" id={id}>
+                    <Col>
                         <h2 className="lineName">{name}</h2>
                     </Col>
-                    <Col className="text-center align-middle my-auto" xs="6">
+                    <Col className="text-center alignMiddle my-auto">
                         <LineModal key={id} line={this.props.line} />
                     </Col>
                 </Row>

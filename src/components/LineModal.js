@@ -85,24 +85,23 @@ class LineModal extends Component {
             const m = (() => {
                 // console.log("Here is the original time: " + periods)
                 const timeString = new Date(periods);
-                const timeFixed = moment.utc(timeString).format("dddd, MMMM Do YYYY, hh:mm:ss ");
+                const timeFixed = moment.utc(timeString).format("dddd, MMMM Do YYYY, HH:mm:ss ");
                 // console.log("Here is the fixed time: " + timeFixed)
                 return timeFixed;
             })();
             // console.log("m is: " + m);
             if (m === "Invalid date") {
-                const updateTime = moment().format("dddd, MMMM Do YYYY, hh:mm:ss ");
+                const updateTime = moment().format("dddd, MMMM Do YYYY, HH:mm:ss ");
                 return updateTime.toString();
             } else {
                 return m;
             }
-
         });
         return data;
     };
 
     render() {
-        const { id, name, modified, lineStatuses } = this.props.line;
+        const { id, name, lineStatuses } = this.props.line;
         // const { statusChanged } = this.props.line.lineStatuses[i].validityPeriods[i].fromDate;
 
 
@@ -115,18 +114,17 @@ class LineModal extends Component {
                             onClick={this.toggle}
                             className={"btn-" + this.warningLevel(lineStatuses) + " btn-lg btn-block"}
                         >
-                            <h4>
-                                {status.statusSeverityDescription}</h4>
+                            <h4>{status.statusSeverityDescription}</h4>
                         </Button>
 
                         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                            <ModalHeader id={id} toggle={this.toggle}>
+                            <ModalHeader id={id}>
                                 <Row>
                                     <Col xs="6">
                                         {name}
                                     </Col>
                                     <Col xs="6"
-                                        className={"bg-" + this.warningLevel(lineStatuses) + " text-center align-middle my-auto"} >
+                                        className={"bg-" + this.warningLevel(lineStatuses) + " text-center align-middle my-auto modalWarning"} >
                                         {status.statusSeverityDescription}
                                     </Col>
                                 </Row>

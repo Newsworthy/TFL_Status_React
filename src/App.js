@@ -5,34 +5,43 @@ import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import { Container } from 'reactstrap';
 import './App.css';
-
-// console.log(`${process.env.REACT_APP_APP_ID}`);
+import moment from 'moment';
 
 class App extends Component {
   state = {
     tflData: [],
     lastUpdate: '',
+    loading: false,
   }
 
-  axiosFunc = () => {
-    // console.log(process.env);
-    // console.log(process.env.PORT);
-    // const APP_ID = `${process.env.REACT_APP_APP_ID}`;
-    // const APP_KEY = `${process.env.REACT_APP_APP_KEY}`;
-    // console.log('Here is what I got: ' + id + ' ' + key)
-    axios.get('https://api.tfl.gov.uk/Line/Mode/tube,overground,dlr,tflrail,tram/Status?detail=False&app_id=ee65a450&app_key=3db5817b87411911cbde2fcf1fd5516e')
-      .then(res => this.setState({ tflData: res.data, lastUpdate: new Date() }));
-    console.log("Axios updated the data.")
+  async axiosFunc() {
+    try {
+      // DEV must use direct to TFL API, BUILD must use direct file link
+      // Get your own TFL developer access at https://tfl.gov.uk/info-for/open-data-users/
+      // You may use the following test data file for testing. It used the following address: https://api.tfl.gov.uk/Line/Mode/tube,overground,dlr,tflrail,tram/Status?detail=False
+      const res = await axios.get('https://development.newsworthyvision.com/tfllivestatus/tflTestData.json');
+      const updateTime = new Date();
+      this.setState({
+        tflData: res.data,
+        lastUpdate: moment(updateTime).format("dddd, MMMM Do YYYY, HH:mm:ss "),
+        loading: false,
+      })
+    } catch (e) {
+      console.log("ERROR: " + e);
+    }
   }
 
   componentDidMount() {
     this.axiosFunc();
+    setInterval(() => {
+      this.setState({loading: true});
+      this.axiosFunc();
+    }, 30000)
   };
 
   render() {
-    // console.log(this.state.tflData);
     return (
-      <div className="App">
+      <div className="App" style={bodyStyle}>
         <Container>
           <Header lastUpdate={this.state.lastUpdate} />
           <Lines tflData={this.state.tflData} />
@@ -42,6 +51,12 @@ class App extends Component {
 
     )
   }
-
 }
+
+const bodyStyle = {
+  background: '#555',
+  color: '#fff',
+  padding: '30px'
+}
+
 export default App;
