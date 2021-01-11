@@ -3,7 +3,7 @@
 
 Currently running here: https://development.newsworthyvision.com/tfllivestatus/
 
-As part of my learning of API addiction and building web apps in React, I present to the world my React App for Londoners, who want to know if their underground train is running smoothly.
+As part of my API addiction and building web apps in React, I present to the world my React App for Londoners, who want to know if their underground train is running smoothly.
 
 ### Now at version 0.5.0, safe and secure
 
