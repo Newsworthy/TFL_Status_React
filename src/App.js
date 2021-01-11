@@ -20,6 +20,7 @@ class App extends Component {
       // Get your own TFL developer access at https://tfl.gov.uk/info-for/open-data-users/
       // You may use the following test data file for testing. It used the following address: https://api.tfl.gov.uk/Line/Mode/tube,overground,dlr,tflrail,tram/Status?detail=False
       const res = await axios.get('https://development.newsworthyvision.com/tfllivestatus/tflTestData.json');
+
       const updateTime = new Date();
       this.setState({
         tflData: res.data,
