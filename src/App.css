@@ -63,6 +63,10 @@ body {
   background-color: rgb(239, 123, 16);
 }
 
+.modal-content .bg-warning {
+  color: #212529;
+}
+
 #metropolitan {
   color: #FFFFFF;
   background-color: rgb(155, 0, 88);

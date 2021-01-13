@@ -124,7 +124,7 @@ class LineModal extends Component {
                                         {name}
                                     </Col>
                                     <Col xs="6"
-                                        className={"bg-" + this.warningLevel(lineStatuses) + " text-center align-middle my-auto modalWarning"} >
+                                        className={"bg-" + this.warningLevel(lineStatuses) + " text-center align-middle my-auto"} >
                                         {status.statusSeverityDescription}
                                     </Col>
                                 </Row>

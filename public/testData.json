@@ -1,0 +1,520 @@
+[
+    {
+        "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+        "created": "2020-12-21T13:27:30.33Z",
+        "crowding": {
+            "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+        },
+        "disruptions": [],
+        "id": "bakerloo",
+        "lineStatuses": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+                "created": "0001-01-01T00:00:00",
+                "id": 0,
+                "statusSeverity": 10,
+                "statusSeverityDescription": "Good Service",
+                "validityPeriods": []
+            }
+        ],
+        "modeName": "tube",
+        "modified": "2020-12-21T13:27:30.33Z",
+        "name": "Bakerloo",
+        "routeSections": [],
+        "serviceTypes": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Regular",
+                "uri": "/Line/Route?ids=Bakerloo&serviceTypes=Regular"
+            }
+        ]
+    },
+    {
+        "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+        "created": "2020-12-21T13:27:30.33Z",
+        "crowding": {
+            "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+        },
+        "disruptions": [],
+        "id": "central",
+        "lineStatuses": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+                "created": "0001-01-01T00:00:00",
+                "id": 0,
+                "statusSeverity": 10,
+                "statusSeverityDescription": "Good Service",
+                "validityPeriods": []
+            }
+        ],
+        "modeName": "tube",
+        "modified": "2020-12-21T13:27:30.33Z",
+        "name": "Central",
+        "routeSections": [],
+        "serviceTypes": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Regular",
+                "uri": "/Line/Route?ids=Central&serviceTypes=Regular"
+            },
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Night",
+                "uri": "/Line/Route?ids=Central&serviceTypes=Night"
+            }
+        ]
+    },
+    {
+        "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+        "created": "2020-12-21T13:27:30.33Z",
+        "crowding": {
+            "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+        },
+        "disruptions": [],
+        "id": "circle",
+        "lineStatuses": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+                "created": "0001-01-01T00:00:00",
+                "id": 0,
+                "statusSeverity": 10,
+                "statusSeverityDescription": "Good Service",
+                "validityPeriods": []
+            }
+        ],
+        "modeName": "tube",
+        "modified": "2020-12-21T13:27:30.33Z",
+        "name": "Circle",
+        "routeSections": [],
+        "serviceTypes": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Regular",
+                "uri": "/Line/Route?ids=Circle&serviceTypes=Regular"
+            }
+        ]
+    },
+    {
+        "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+        "created": "2020-12-21T13:27:30.33Z",
+        "crowding": {
+            "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+        },
+        "disruptions": [],
+        "id": "district",
+        "lineStatuses": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+                "created": "0001-01-01T00:00:00",
+                "id": 0,
+                "statusSeverity": 10,
+                "statusSeverityDescription": "Good Service",
+                "validityPeriods": []
+            }
+        ],
+        "modeName": "tube",
+        "modified": "2020-12-21T13:27:30.33Z",
+        "name": "District",
+        "routeSections": [],
+        "serviceTypes": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Regular",
+                "uri": "/Line/Route?ids=District&serviceTypes=Regular"
+            }
+        ]
+    },
+    {
+        "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+        "created": "2020-12-21T13:27:30.347Z",
+        "crowding": {
+            "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+        },
+        "disruptions": [],
+        "id": "dlr",
+        "lineStatuses": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+                "created": "0001-01-01T00:00:00",
+                "id": 0,
+                "statusSeverity": 10,
+                "statusSeverityDescription": "Good Service",
+                "validityPeriods": []
+            }
+        ],
+        "modeName": "dlr",
+        "modified": "2020-12-21T13:27:30.347Z",
+        "name": "DLR",
+        "routeSections": [],
+        "serviceTypes": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Regular",
+                "uri": "/Line/Route?ids=DLR&serviceTypes=Regular"
+            }
+        ]
+    },
+    {
+        "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+        "created": "2020-12-21T13:27:30.33Z",
+        "crowding": {
+            "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+        },
+        "disruptions": [],
+        "id": "hammersmith-city",
+        "lineStatuses": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+                "created": "0001-01-01T00:00:00",
+                "id": 0,
+                "statusSeverity": 10,
+                "statusSeverityDescription": "Good Service",
+                "validityPeriods": []
+            }
+        ],
+        "modeName": "tube",
+        "modified": "2020-12-21T13:27:30.33Z",
+        "name": "Hammersmith & City",
+        "routeSections": [],
+        "serviceTypes": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Regular",
+                "uri": "/Line/Route?ids=Hammersmith & City&serviceTypes=Regular"
+            }
+        ]
+    },
+    {
+        "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+        "created": "2020-12-21T13:27:30.33Z",
+        "crowding": {
+            "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+        },
+        "disruptions": [],
+        "id": "jubilee",
+        "lineStatuses": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+                "created": "0001-01-01T00:00:00",
+                "id": 0,
+                "statusSeverity": 10,
+                "statusSeverityDescription": "Good Service",
+                "validityPeriods": []
+            }
+        ],
+        "modeName": "tube",
+        "modified": "2020-12-21T13:27:30.33Z",
+        "name": "Jubilee",
+        "routeSections": [],
+        "serviceTypes": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Regular",
+                "uri": "/Line/Route?ids=Jubilee&serviceTypes=Regular"
+            },
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Night",
+                "uri": "/Line/Route?ids=Jubilee&serviceTypes=Night"
+            }
+        ]
+    },
+    {
+        "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+        "created": "2020-12-21T13:27:30.347Z",
+        "crowding": {
+            "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+        },
+        "disruptions": [],
+        "id": "london-overground",
+        "lineStatuses": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+                "created": "0001-01-01T00:00:00",
+                "disruption": {
+                    "$type": "Tfl.Api.Presentation.Entities.Disruption, Tfl.Api.Presentation.Entities",
+                    "affectedRoutes": [],
+                    "affectedStops": [],
+                    "category": "RealTime",
+                    "categoryDescription": "RealTime",
+                    "closureText": "reducedService",
+                    "created": "2021-01-08T12:04:00Z",
+                    "description": "LONDON OVERGROUND: Monday 11 to Friday 15 January, there will be a reduced frequency between Richmond and Stratford. There will generally be two trains per hour between Richmond and Willesden Junction, which will continue to Stratford. There will generally be six trains an hour between Willesden Junction and Stratford, which will start from Richmond or Clapham Junction."
+                },
+                "id": 0,
+                "lineId": "london-overground",
+                "reason": "LONDON OVERGROUND: Monday 11 to Friday 15 January, there will be a reduced frequency between Richmond and Stratford. There will generally be two trains per hour between Richmond and Willesden Junction, which will continue to Stratford. There will generally be six trains an hour between Willesden Junction and Stratford, which will start from Richmond or Clapham Junction.",
+                "statusSeverity": 7,
+                "statusSeverityDescription": "Reduced Service",
+                "validityPeriods": [
+                    {
+                        "$type": "Tfl.Api.Presentation.Entities.ValidityPeriod, Tfl.Api.Presentation.Entities",
+                        "fromDate": "2021-01-11T04:30:00Z",
+                        "isNow": true,
+                        "toDate": "2021-01-15T01:29:00Z"
+                    }
+                ]
+            }
+        ],
+        "modeName": "overground",
+        "modified": "2020-12-21T13:27:30.347Z",
+        "name": "London Overground",
+        "routeSections": [],
+        "serviceTypes": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Regular",
+                "uri": "/Line/Route?ids=London Overground&serviceTypes=Regular"
+            },
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Night",
+                "uri": "/Line/Route?ids=London Overground&serviceTypes=Night"
+            }
+        ]
+    },
+    {
+        "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+        "created": "2020-12-21T13:27:30.33Z",
+        "crowding": {
+            "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+        },
+        "disruptions": [],
+        "id": "metropolitan",
+        "lineStatuses": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+                "created": "0001-01-01T00:00:00",
+                "id": 0,
+                "statusSeverity": 10,
+                "statusSeverityDescription": "Good Service",
+                "validityPeriods": []
+            }
+        ],
+        "modeName": "tube",
+        "modified": "2020-12-21T13:27:30.33Z",
+        "name": "Metropolitan",
+        "routeSections": [],
+        "serviceTypes": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Regular",
+                "uri": "/Line/Route?ids=Metropolitan&serviceTypes=Regular"
+            }
+        ]
+    },
+    {
+        "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+        "created": "2020-12-21T13:27:30.347Z",
+        "crowding": {
+            "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+        },
+        "disruptions": [],
+        "id": "northern",
+        "lineStatuses": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+                "created": "0001-01-01T00:00:00",
+                "id": 0,
+                "statusSeverity": 10,
+                "statusSeverityDescription": "Good Service",
+                "validityPeriods": []
+            }
+        ],
+        "modeName": "tube",
+        "modified": "2020-12-21T13:27:30.347Z",
+        "name": "Northern",
+        "routeSections": [],
+        "serviceTypes": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Regular",
+                "uri": "/Line/Route?ids=Northern&serviceTypes=Regular"
+            },
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Night",
+                "uri": "/Line/Route?ids=Northern&serviceTypes=Night"
+            }
+        ]
+    },
+    {
+        "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+        "created": "2020-12-21T13:27:30.33Z",
+        "crowding": {
+            "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+        },
+        "disruptions": [],
+        "id": "piccadilly",
+        "lineStatuses": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+                "created": "0001-01-01T00:00:00",
+                "id": 0,
+                "statusSeverity": 10,
+                "statusSeverityDescription": "Good Service",
+                "validityPeriods": []
+            }
+        ],
+        "modeName": "tube",
+        "modified": "2020-12-21T13:27:30.33Z",
+        "name": "Piccadilly",
+        "routeSections": [],
+        "serviceTypes": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Regular",
+                "uri": "/Line/Route?ids=Piccadilly&serviceTypes=Regular"
+            },
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Night",
+                "uri": "/Line/Route?ids=Piccadilly&serviceTypes=Night"
+            }
+        ]
+    },
+    {
+        "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+        "created": "2020-12-21T13:27:30.363Z",
+        "crowding": {
+            "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+        },
+        "disruptions": [],
+        "id": "tfl-rail",
+        "lineStatuses": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+                "created": "0001-01-01T00:00:00",
+                "id": 0,
+                "statusSeverity": 10,
+                "statusSeverityDescription": "Good Service",
+                "validityPeriods": []
+            }
+        ],
+        "modeName": "tflrail",
+        "modified": "2020-12-21T13:27:30.363Z",
+        "name": "TfL Rail",
+        "routeSections": [],
+        "serviceTypes": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Regular",
+                "uri": "/Line/Route?ids=TfL Rail&serviceTypes=Regular"
+            }
+        ]
+    },
+    {
+        "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+        "created": "2020-12-21T13:27:30.347Z",
+        "crowding": {
+            "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+        },
+        "disruptions": [],
+        "id": "tram",
+        "lineStatuses": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+                "created": "0001-01-01T00:00:00",
+                "id": 0,
+                "statusSeverity": 10,
+                "statusSeverityDescription": "Good Service",
+                "validityPeriods": []
+            }
+        ],
+        "modeName": "tram",
+        "modified": "2020-12-21T13:27:30.347Z",
+        "name": "Tram",
+        "routeSections": [],
+        "serviceTypes": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Regular",
+                "uri": "/Line/Route?ids=Tram&serviceTypes=Regular"
+            }
+        ]
+    },
+    {
+        "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+        "created": "2020-12-21T13:27:30.33Z",
+        "crowding": {
+            "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+        },
+        "disruptions": [],
+        "id": "victoria",
+        "lineStatuses": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+                "created": "0001-01-01T00:00:00",
+                "id": 0,
+                "statusSeverity": 10,
+                "statusSeverityDescription": "Good Service",
+                "validityPeriods": []
+            }
+        ],
+        "modeName": "tube",
+        "modified": "2020-12-21T13:27:30.33Z",
+        "name": "Victoria",
+        "routeSections": [],
+        "serviceTypes": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Regular",
+                "uri": "/Line/Route?ids=Victoria&serviceTypes=Regular"
+            },
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Night",
+                "uri": "/Line/Route?ids=Victoria&serviceTypes=Night"
+            }
+        ]
+    },
+    {
+        "$type": "Tfl.Api.Presentation.Entities.Line, Tfl.Api.Presentation.Entities",
+        "created": "2020-12-21T13:27:30.363Z",
+        "crowding": {
+            "$type": "Tfl.Api.Presentation.Entities.Crowding, Tfl.Api.Presentation.Entities"
+        },
+        "disruptions": [],
+        "id": "waterloo-city",
+        "lineStatuses": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineStatus, Tfl.Api.Presentation.Entities",
+                "created": "0001-01-01T00:00:00",
+                "disruption": {
+                    "$type": "Tfl.Api.Presentation.Entities.Disruption, Tfl.Api.Presentation.Entities",
+                    "affectedRoutes": [],
+                    "affectedStops": [],
+                    "category": "PlannedWork",
+                    "categoryDescription": "PlannedWork",
+                    "closureText": "plannedClosure",
+                    "created": "2020-07-20T09:55:00Z",
+                    "description": "WATERLOO & CITY LINE: No service until further notice."
+                },
+                "id": 0,
+                "lineId": "waterloo-city",
+                "reason": "WATERLOO & CITY LINE: No service until further notice.",
+                "statusSeverity": 4,
+                "statusSeverityDescription": "Planned Closure",
+                "validityPeriods": [
+                    {
+                        "$type": "Tfl.Api.Presentation.Entities.ValidityPeriod, Tfl.Api.Presentation.Entities",
+                        "fromDate": "2020-07-20T09:55:00Z",
+                        "isNow": false,
+                        "toDate": "2021-12-31T01:29:00Z"
+                    }
+                ]
+            }
+        ],
+        "modeName": "tube",
+        "modified": "2020-12-21T13:27:30.363Z",
+        "name": "Waterloo & City",
+        "routeSections": [],
+        "serviceTypes": [
+            {
+                "$type": "Tfl.Api.Presentation.Entities.LineServiceTypeInfo, Tfl.Api.Presentation.Entities",
+                "name": "Regular",
+                "uri": "/Line/Route?ids=Waterloo & City&serviceTypes=Regular"
+            }
+        ]
+    }
+]

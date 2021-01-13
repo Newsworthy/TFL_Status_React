@@ -6,6 +6,7 @@ import Footer from './components/layout/Footer';
 import { Container } from 'reactstrap';
 import './App.css';
 import moment from 'moment';
+// import './testData.json';
 
 class App extends Component {
   state = {
@@ -18,8 +19,8 @@ class App extends Component {
     try {
       // DEV must use direct to TFL API, BUILD must use direct file link
       // Get your own TFL developer access at https://tfl.gov.uk/info-for/open-data-users/
-      // You may use the following test data file for testing. It used the following address: https://api.tfl.gov.uk/Line/Mode/tube,overground,dlr,tflrail,tram/Status?detail=False
-      const res = await axios.get('https://development.newsworthyvision.com/tfllivestatus/tflTestData.json');
+      // A testData.json file is now included in the public folder for testing. It used the following address: https://api.tfl.gov.uk/Line/Mode/tube,overground,dlr,tflrail,tram/Status?detail=False
+      const res = await axios.get('./testData.json');
 
       const updateTime = new Date();
       this.setState({
