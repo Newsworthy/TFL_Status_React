@@ -6,13 +6,25 @@ import {
     Row,
 } from 'reactstrap';
 import LineModal from "./LineModal";
+import UIfx from 'uifx';
+import dual_beep from '.././beep_beep.mp3'
 
 export class TransportLine extends Component {
 
-    componentDidMount = (props) => {
-
-    };
-
+    componentDidUpdate(prevProps) {
+        // console.log("Prevprops: " + JSON.stringify(prevProps.line));
+        if (JSON.stringify(prevProps.line) !== JSON.stringify(this.props.line)) {
+            console.log("Something changed");
+            const beep = new UIfx(
+              dual_beep,
+              {
+                volume: 0.5,
+              });
+            beep.play();
+        } else {
+            console.log("Nothing changed.")
+        }
+    }
     render() {
         const { id, name } = this.props.line;
         return (

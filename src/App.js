@@ -6,6 +6,7 @@ import Footer from './components/layout/Footer';
 import { Container } from 'reactstrap';
 import './App.css';
 import moment from 'moment';
+
 // import './testData.json';
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
       // A testData.json file is now included in the public folder for testing. It used the following address: https://api.tfl.gov.uk/Line/Mode/tube,overground,dlr,tflrail,tram/Status?detail=False
       const res = await axios.get('./testData.json');
 
+
       const updateTime = new Date();
       this.setState({
         tflData: res.data,
@@ -36,7 +38,7 @@ class App extends Component {
   componentDidMount() {
     this.axiosFunc();
     setInterval(() => {
-      this.setState({loading: true});
+      this.setState({ loading: true });
       this.axiosFunc();
     }, 30000)
   };
