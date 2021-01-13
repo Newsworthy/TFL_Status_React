@@ -63,10 +63,6 @@ body {
   background-color: rgb(239, 123, 16);
 }
 
-.modal-content .bg-warning {
-  color: #212529;
-}
-
 #metropolitan {
   color: #FFFFFF;
   background-color: rgb(155, 0, 88);
@@ -121,13 +117,25 @@ button {
   min-width: 90%;
 }
 
+.modal-content .bg-warning {
+  color: #212529;
+}
+
+.modal-content .bg-success {
+  color: #ffffff;
+}
+
+.modal-content .bg-danger {
+  color: #ffffff;
+}
+
 .modalWarning {
   color: #ffffff;
 }
 
 .modal-dialog {
   position: relative;
-  top: 40%;
+  top: 35%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
